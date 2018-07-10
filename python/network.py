@@ -115,7 +115,7 @@ class Network(object):
 
             # update statistics on train
             counter += 1
-            print '\r', counter,
+            if counter % 100 == 0: print counter, 
             train_num_letters += batch_size * message_size
             for i in range(message_size):
                 train_num_correct += np.sum((np.argmax(predictions[i], axis=1) == clean[:, i]))
@@ -123,7 +123,7 @@ class Network(object):
             # make intermediate report
             if counter == test_num_iterations:
                 # print current model
-                print '\r',
+                print ''
                 saver = tf.train.Saver()
                 saver.save(self.sess, model_file)
 
