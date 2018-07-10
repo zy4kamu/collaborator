@@ -1,0 +1,8 @@
+.idea
+*.swp
+*.pyc
+*CMakeLists.txt.user
+build/
+corpus
+dataset
+cplusplus-build
